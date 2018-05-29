@@ -1,0 +1,12 @@
+[
+  {
+    "order": 1,
+    "name": "Round 1",
+    "sheet": "round1"
+  },
+  {
+    "order": 2,
+    "name": "Round 2",
+    "sheet": "round2"
+  }
+]

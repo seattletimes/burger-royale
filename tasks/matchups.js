@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       return round;
     };
 
-    var orderSheet = getSheet("order");
+    var orderSheet = getSheet("rounds");
 
     if (!orderSheet) {
       grunt.fail.fatal("Unable to load the config sheet with order data -- have you run `grunt sheets`?");
@@ -71,6 +71,10 @@ module.exports = function(grunt) {
       rounds: [],
       current: roundID
     };
+
+    orderSheet.sort(function(a, b) {
+      return a.order - b.order;
+    });
 
     //first handle sheets up to the current round
     for (var i = 0; i < orderSheet.length; i++) {

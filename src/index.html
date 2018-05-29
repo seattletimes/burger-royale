@@ -6,10 +6,11 @@
   </head>
   <body>
 
-    <responsive-child>
-      <!-- content goes here -->
-    </responsive-child>
 
+    <script>
+window.bracketData = <%= JSON.stringify(grunt.data.bracket) %>;
+window.appData = {};
+    </script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
     <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
