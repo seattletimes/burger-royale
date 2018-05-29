@@ -15,6 +15,7 @@ var jsonp = function(url, params, callback) {
   var script = document.createElement("script");
   window[nonce] = function(data) {
     document.body.removeChild(script);
+    delete window[nonce];
     callback(data);
   }
   script.src = url + "?" + query.join("&");
