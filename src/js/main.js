@@ -21,11 +21,27 @@ state.selectedMatchup = state.selectedRound.matchups[0];
 
 var versusContainer = $.one(".selected-matchup");
 var listContainer = $.one(".round-matchups");
+var roundNav = $.one("nav.choose-round");
 
-console.log(state);
+var updateRound = function() {
+  var selected = roundNav.querySelector("input:checked").value;
+  state.selectedRound = roundLookup[selected];
+  console.log(selected, state);
+  listContainer.innerHTML = listTemplate(state.selectedRound);
+  updateSelection();
+}
 
-versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
-listContainer.innerHTML = listTemplate(state.selectedRound);
+var updateSelection = function() {
+  var selected = listContainer.querySelector("input:checked").value;
+  state.selectedMatchup = state.selectedRound.matchups[selected];
+  versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
+}
+
+
+listContainer.addEventListener("change", updateSelection);
+roundNav.addEventListener("change", updateRound);
+
+updateRound();
 
 // jsonp(server, { vote: "Bent Burgers" }, function(data) {
 //   console.log(data);
