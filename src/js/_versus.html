@@ -1,0 +1,12 @@
+<% data.options.forEach(function(option) { %>
+<div class="column">
+  <div class="photo-block">
+    <div class="placeholder"></div>
+    <%= option.name %>
+  </div>
+  <div class="description">
+
+  </div>
+  <button class="vote" data-name="<%= option.name %>">Vote!</button>
+</div>
+<% }); %>

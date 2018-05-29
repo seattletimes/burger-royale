@@ -1,0 +1,30 @@
+.choose-round {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  label {
+    display: block;
+    padding: 10px;
+  }
+
+  input {
+
+    &:checked + label {
+      color: yellow;
+    }
+  }
+}

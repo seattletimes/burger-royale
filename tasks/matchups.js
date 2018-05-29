@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         b.votes *= 1;
         var matchup = {
           options: [a, b],
-          total: a.votes + b.votes,
+          total: a.votes + b.votes || 0,
           winner: null
         };
         matchup.options.forEach(function(option) {

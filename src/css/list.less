@@ -1,0 +1,47 @@
+.round-matchups {
+  padding: 20px 16px;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    .display-flex();
+    .flex-wrap(wrap);
+    .justify-content(space-around);
+    .align-items(flex-start);
+    font-family: @df-sans;
+  }
+
+  li {
+    .flex(0 0 204px);
+    margin-bottom: 8px;
+  }
+
+  label {
+    padding: 4px;
+    display: block;
+    background: @df-light-gray;
+    color: @df-middle-gray;
+  }
+
+  .candidate {
+    background: white;
+    padding: 4px;
+    font-size: 16px;
+
+    &:first-child {
+      margin-bottom: 4px;
+    }
+  }
+
+  label:hover, label:focus,
+  input:hover + label, input:focus + label {
+    background: @df-middle-gray;
+  }
+
+  input:checked + label {
+    color: @df-dark-gray;
+    background: @st-dark-red;
+  }
+  
+}

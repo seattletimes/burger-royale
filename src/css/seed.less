@@ -1,1 +1,45 @@
 @import "seattletimes";
+
+@import "header";
+@import "nav";
+@import "list";
+@import "versus";
+
+.constrained {
+  max-width: 800px;
+  margin: auto;
+}
+
+.a11y-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+}
+
+.placeholder {
+  position: relative;
+  border: 1px solid @df-light-gray;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    content: "PLACEHOLDER";
+    font-family: @df-sans;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+
+  &.wide::before {
+    padding-bottom: percentage(9 / 16);
+  }
+}

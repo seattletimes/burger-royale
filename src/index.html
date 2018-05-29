@@ -6,10 +6,35 @@
   </head>
   <body>
 
+    <%= t.include("partials/_nav.html") %>
+
+    <header class="splash">
+      <h1>Burger Royale</h1>
+    </header>
+
+    <main class="bracket">
+      <nav class="choose-round">
+        <ul>
+          <% json.rounds.forEach(function(round) { %>
+          <li>
+            <input type="radio" class="a11y-hidden" name="round-selection" value="<%= round.sheet %>" id="<%= round.sheet %>">
+            <label for="<%= round.sheet %>"><%= round.name %></label>
+          <% }) %>
+
+        </ul>
+      </nav>
+      <div class="selected-matchup constrained">
+
+      </div>
+      <div class="round-matchups constrained">
+
+      </div>
+    </main>
+
+    <%= t.include("partials/_navBottom.html") %>
 
     <script>
 window.bracketData = <%= JSON.stringify(grunt.data.bracket) %>;
-window.appData = {};
     </script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

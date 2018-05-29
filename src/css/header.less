@@ -1,0 +1,37 @@
+header.splash {
+  position: relative;
+  background: linear-gradient(to bottom, #444, black, #444);
+
+  h1 {
+    font-size: 100px;
+    text-align: center;
+    font-family: @df-sans;
+    padding: 200px 0;
+    color: @df-light-gray;
+    position: relative;
+    z-index: 1;
+    text-shadow: 4px 4px 9px @df-dark-gray;
+    margin: 0;
+  }
+
+  &::before {
+    @color: darken(red, 20%);
+    display: block;
+    transform-origin: 50%;
+    transform: rotate(-10deg) scaleX(.8);
+    content: "BR";
+    font-family: @df-serif;
+    font-size: 300px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: fade(white, 20%);
+    text-shadow: 0 0 2px @color;
+    border: 12px solid @color;
+    border-top-width: 0;
+    line-height: 1;
+    padding: 0;
+    border-radius: 100%;
+  }
+}
