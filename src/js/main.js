@@ -26,14 +26,14 @@ var roundNav = $.one("nav.choose-round");
 var updateRound = function() {
   var selected = roundNav.querySelector("input:checked").value;
   state.selectedRound = roundLookup[selected];
-  console.log(selected, state);
   listContainer.innerHTML = listTemplate(state.selectedRound);
   updateSelection();
 }
 
 var updateSelection = function() {
-  var selected = listContainer.querySelector("input:checked").value;
-  state.selectedMatchup = state.selectedRound.matchups[selected];
+  var selected = listContainer.querySelector("input:checked");
+  if (!selected) return;
+  state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
 }
 

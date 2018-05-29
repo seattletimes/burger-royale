@@ -1,5 +1,7 @@
 <ul class="matchups">
-  <% data.matchups.forEach(function(item, i) { %>
+  <% if (!data.matchups.length) { %>
+  This round isn't open yet--check back later!
+  <% } else data.matchups.forEach(function(item, i) { %>
   <li>
     <input
       type="radio"

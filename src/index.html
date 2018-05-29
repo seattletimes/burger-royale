@@ -15,14 +15,22 @@
     <main class="bracket">
       <nav class="choose-round">
         <ul>
-          <% json.rounds.forEach(function(round) { %>
+          <% json.rounds.forEach(function(round, i) { %>
           <li>
-            <input type="radio" class="a11y-hidden" name="round-selection" value="<%= round.sheet %>" id="<%= round.sheet %>">
+            <input
+              <%= i ? "" : 'checked="checked"' %>
+              type="radio"
+              class="a11y-hidden"
+              name="round-selection"
+              value="<%= round.sheet %>"
+              id="<%= round.sheet %>">
             <label for="<%= round.sheet %>"><%= round.name %></label>
           <% }) %>
-
         </ul>
       </nav>
+      <div hidden class="svg-templates">
+        <%= t.include("./assets/burger-icons.svg") %>
+      </div>
       <div class="selected-matchup constrained">
 
       </div>
