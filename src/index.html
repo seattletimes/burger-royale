@@ -43,6 +43,7 @@
 
     <script>
 window.bracketData = <%= JSON.stringify(grunt.data.bracket) %>;
+window.candidateData = <%= JSON.stringify(json.candidates) %>;
     </script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

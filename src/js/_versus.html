@@ -2,18 +2,24 @@
 <div class="column">
   <div class="photo-block">
     <div class="placeholder"></div>
-    <%= option.name %>
-    <div class="icons">
-      <svg class="icon veggie" viewBox="26 26 202 210">
-        <use xlink:href="#veggie"></use>
-      </svg>
-      <svg class="icon fries" viewBox="249 26 202 210">
-        <use xlink:href="#fries"></use>
-      </svg>
-      <svg class="icon shake" viewBox="482 26 202 210">
-        <use xlink:href="#shake"></use>
-      </svg>
-    </div>
+    <h2><%= option.name %></h2>
+    <ul class="offerings">
+      <li> 
+        <svg class="icon veggie" viewBox="26 26 202 210">
+          <use xlink:href="#veggie"></use>
+        </svg>
+        <span><%= option.data.veggie || "none" %></span>
+      <li> 
+        <svg class="icon fries" viewBox="249 26 202 210">
+          <use xlink:href="#fries"></use>
+        </svg>
+        <span><%= option.data.fries || "none" %></span>
+      <li> 
+        <svg class="icon shake" viewBox="482 26 202 210">
+          <use xlink:href="#shake"></use>
+        </svg>
+        <span><%= option.data.shakes || "none" %></span>
+    </ul>
   </div>
   <div class="description">
 

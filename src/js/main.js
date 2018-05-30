@@ -4,6 +4,7 @@
 var $ = require("./lib/qsa");
 var jsonp = require("./lib/jsonp");
 var dot = require("./lib/dot");
+var scroll = require("./lib/animateScroll");
 
 var versusTemplate = dot.compile(require("./_versus.html"));
 var listTemplate = dot.compile(require("./_list.html"));
@@ -11,7 +12,14 @@ var listTemplate = dot.compile(require("./_list.html"));
 var server = "https://script.google.com/macros/s/AKfycbzfbV5LQ9eH1dCzjLnYpNnEHcdfNgRvW7A01fsrRwmhGI52Oulo/exec";
 
 var roundLookup = {};
-bracketData.rounds.forEach(r => roundLookup[r.id] = r);
+var candidateLookup = {};
+candidateData.forEach(c => candidateLookup[c.name] = c);
+bracketData.rounds.forEach(r => {
+  roundLookup[r.id] = r;
+  r.matchups.forEach(m => {
+    m.options.forEach(o => o.data = candidateLookup[o.name]);
+  });
+});
 
 var state = {
   selectedRound: roundLookup[bracketData.current]
@@ -30,11 +38,12 @@ var updateRound = function() {
   updateSelection();
 }
 
-var updateSelection = function() {
+var updateSelection = function(e) {
   var selected = listContainer.querySelector("input:checked");
   if (!selected) return;
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
+  if (e) scroll(versusContainer);
 }
 
 

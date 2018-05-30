@@ -1,18 +1,69 @@
 .selected-matchup {
   .display-flex();
+  font-family: @df-sans;
+  padding: 40px;
+
+  &.constrained {
+    margin: 40px auto;
+  }
+
+  @red: darken(red, 20%);
+
+  background: repeating-linear-gradient(
+    45deg,
+    @red 0px,
+    @red 10px,
+    white 10px,
+    white 20px,
+    @red 20px
+  );
 
   .column {
     .flex(0 0 50%);
+    padding: 8px;
+    background: white;
+    &:first-child {
+      border-right: 2px solid @red;
+    }
   }
 
-  .icons {
+  h2 {
     text-align: center;
   }
 
+  .offerings {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      .display-flex();
+      .align-items(center);
+    }
+
+    span {
+      padding-left: 8px;
+    }
+  }
+
   .icon {
-    display: inline-block;
+    display: block;
     @size: 100px;
     width: @size;
     height: @size;
+    .flex(0 0 @size);
+  }
+
+  .vote {
+    background: @red;
+    border-radius: 20px;
+    padding: 4px 20px;
+    color: white;
+    display: block;
+    margin: auto;
+    border: none;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 }
