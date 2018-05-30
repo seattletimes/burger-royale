@@ -10,7 +10,7 @@ var jsonp = function(url, params, callback) {
   var query = [];
   for (var k in params) {
     var v = params[k];
-    query.push(k + "=" + v);
+    query.push(k + "=" + encodeURIComponent(v));
   }
   var script = document.createElement("script");
   window[nonce] = function(data) {

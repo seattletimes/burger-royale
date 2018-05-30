@@ -64,8 +64,7 @@ var submitVote = function(e) {
     e.target.classList.add("success");
     memory.setVote(bracketData.current, index);
   });
-}
-
+};
 
 listContainer.addEventListener("change", updateSelection);
 roundNav.addEventListener("change", updateRound);
