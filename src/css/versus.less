@@ -65,5 +65,17 @@
     font-size: 28px;
     text-transform: uppercase;
     font-weight: bold;
+
+    &:hover, &:focus {
+      background: lighten(@red, 10%);
+    }
+
+    &:disabled {
+      background: @df-middle-gray;
+    }
+
+    &.success {
+      background: green;
+    }
   }
 }

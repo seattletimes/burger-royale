@@ -36,7 +36,7 @@ var updateRound = function() {
   state.selectedRound = roundLookup[selected];
   listContainer.innerHTML = listTemplate(state.selectedRound);
   updateSelection();
-}
+};
 
 var updateSelection = function(e) {
   var selected = listContainer.querySelector("input:checked");
@@ -44,11 +44,27 @@ var updateSelection = function(e) {
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
   if (e) scroll(versusContainer);
+};
+
+var submitVote = function(e) {
+  if (!(e.target.classList.contains("vote"))) return;
+  var buttons = $(".vote", versusContainer)
+  buttons.forEach(b => b.disabled = true);
+  var name = e.target.value;
+  jsonp(server, { vote: name }, function(data) {
+    if (data.error) {
+      buttons.forEach(b => b.disabled = false);
+      return console.log(data.error);
+    }
+    e.target.classList.add("success");
+  });
 }
 
 
 listContainer.addEventListener("change", updateSelection);
 roundNav.addEventListener("change", updateRound);
+
+versusContainer.addEventListener("click", submitVote);
 
 updateRound();
 
