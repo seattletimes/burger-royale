@@ -18,7 +18,11 @@ var jsonp = function(url, params, callback) {
     delete window[nonce];
     callback(data);
   };
-  script.onerror = () => callback({ error: "Couldn't load JSONP" });
+  script.onerror = () => {
+    callback({ error: "Couldn't load JSONP" });
+    delete window[nonce];
+    document.body.removeChild(script);
+  }
   script.src = url + "?" + query.join("&");
   document.body.appendChild(script);
 }

@@ -50,6 +50,7 @@ var updateSelection = function(e) {
   if (e) scroll(versusContainer);
 };
 
+
 var submitVote = function(e) {
   if (!(e.target.classList.contains("vote"))) return;
   var buttons = $(".vote", versusContainer)
