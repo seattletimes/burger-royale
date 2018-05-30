@@ -5,6 +5,7 @@ var $ = require("./lib/qsa");
 var jsonp = require("./lib/jsonp");
 var dot = require("./lib/dot");
 var scroll = require("./lib/animateScroll");
+var memory = require("./memory");
 
 var versusTemplate = dot.compile(require("./_versus.html"));
 var listTemplate = dot.compile(require("./_list.html"));
@@ -16,7 +17,10 @@ var candidateLookup = {};
 candidateData.forEach(c => candidateLookup[c.name] = c);
 bracketData.rounds.forEach(r => {
   roundLookup[r.id] = r;
-  r.matchups.forEach(m => {
+  var history = memory.getVotes(r.id);
+  r.active = r.id == bracketData.current;
+  r.matchups.forEach((m, i) => {
+    m.active = history[i] ? false : r.active;
     m.options.forEach(o => o.data = candidateLookup[o.name]);
   });
 });
@@ -51,12 +55,14 @@ var submitVote = function(e) {
   var buttons = $(".vote", versusContainer)
   buttons.forEach(b => b.disabled = true);
   var name = e.target.value;
+  var index = e.target.getAttribute("data-index");
   jsonp(server, { vote: name }, function(data) {
     if (data.error) {
       buttons.forEach(b => b.disabled = false);
       return console.log(data.error);
     }
     e.target.classList.add("success");
+    memory.setVote(bracketData.current, index);
   });
 }
 
@@ -67,7 +73,3 @@ roundNav.addEventListener("change", updateRound);
 versusContainer.addEventListener("click", submitVote);
 
 updateRound();
-
-// jsonp(server, { vote: "Bent Burgers" }, function(data) {
-//   console.log(data);
-// });

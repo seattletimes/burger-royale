@@ -24,6 +24,8 @@
   <div class="description">
 
   </div>
-  <button class="vote" value="<%= option.name %>">Vote!</button>
+  <% if (data.active) { %>
+  <button class="vote" value="<%= option.name %>" data-index="<%= data.index %>">Vote!</button>
+  <% } %>
 </div>
 <% }); %>
