@@ -2,18 +2,20 @@
   background: black;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: @df-sans;
+  font-size: 16px;
 
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
-    text-align: center;
     max-width: 800px;
+    text-align: center;
   }
 
   li {
     display: inline-block;
+    text-align: left;
   }
 
   label {
@@ -21,10 +23,28 @@
     padding: 10px;
   }
 
+  .name {
+    font-weight: bold;
+  }
+
+  .date {
+    font-size: 15px;
+  }
+
   input {
 
     &:checked + label {
-      color: yellow;
+      cursor: pointer;
+      
+      .name {
+        color: yellow;
+      }
+    }
+
+    &:disabled + label {
+      .name { color: white }
+      opacity: .6;
+      cursor: normal;
     }
   }
 }

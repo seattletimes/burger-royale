@@ -2,11 +2,37 @@
   {
     "order": 1,
     "name": "Round 1",
-    "sheet": "round1"
+    "sheet": "round1",
+    "dates": "6/19 - 6/24"
   },
   {
     "order": 2,
     "name": "Round 2",
-    "sheet": "round2"
+    "sheet": "round2",
+    "dates": "6/25 - 6/28"
+  },
+  {
+    "order": 3,
+    "name": "Round 3",
+    "sheet": "round3",
+    "dates": "6/29 - 7/2"
+  },
+  {
+    "order": 4,
+    "name": "Round 4",
+    "sheet": "round4",
+    "dates": "7/3 - 7/7"
+  },
+  {
+    "order": 5,
+    "name": "Round 5",
+    "sheet": "round5",
+    "dates": "7/8 - 7/12"
+  },
+  {
+    "order": 6,
+    "name": "Winner Announced",
+    "sheet": "round6",
+    "dates": "7/16"
   }
 ]

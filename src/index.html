@@ -3,6 +3,7 @@
   <head>
     <%= t.include("partials/_head.html", grunt.data.json) %>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Titan+One" rel="stylesheet">
   </head>
   <body>
 
@@ -10,32 +11,39 @@
 
     <header class="splash">
       <h1>Burger Royale</h1>
+      <img src="./assets/burger-header.jpg">
     </header>
 
     <main class="bracket">
       <nav class="choose-round">
         <ul>
-          <% json.rounds.forEach(function(round, i) { %>
+          <% grunt.data.bracket.rounds.forEach(function(round, i) { %>
           <li>
             <input
               <%= i ? "" : 'checked="checked"' %>
               type="radio"
               class="a11y-hidden"
               name="round-selection"
-              value="<%= round.sheet %>"
-              id="<%= round.sheet %>">
-            <label for="<%= round.sheet %>"><%= round.name %></label>
+              value="<%= round.id %>"
+              id="<%= round.id %>"
+              <% if (!round.active && !round.past) { %>
+              disabled="disabled"
+              <% } %>
+            >
+            <label for="<%= round.id %>">
+              <div class="name"><%= round.name %></div>
+              <div class="date"><%= round.dates %></div>  
+            </label>
           <% }) %>
         </ul>
       </nav>
       <div hidden class="svg-templates">
         <%= t.include("./assets/burger-icons.svg") %>
       </div>
-      <div class="selected-matchup constrained">
-
-      </div>
-      <div class="round-matchups constrained">
-
+      
+      <div class="actually">
+        <div class="selected-matchup constrained"></div>
+        <div class="round-matchups constrained"></div>
       </div>
     </main>
 

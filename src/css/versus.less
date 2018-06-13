@@ -2,80 +2,115 @@
   .display-flex();
   font-family: @df-sans;
   padding: 40px;
+  font-size: 17px;
 
   &.constrained {
     margin: 40px auto;
   }
 
-  @red: darken(red, 20%);
-
-  background: repeating-linear-gradient(
-    45deg,
-    @red 0px,
-    @red 10px,
-    white 10px,
-    white 20px,
-    @red 20px
-  );
-
   .column {
     .flex(0 0 50%);
-    padding: 8px;
-    background: white;
+    padding: 0 20px;
+    .display-flex();
+    .flex-direction(column);
+    .justify-content(space-between);
+
     &:first-child {
-      border-right: 2px solid @red;
+      border-right: 1px solid @df-light-gray;
     }
   }
 
   h2 {
+    font-family: @headline;
     text-align: center;
+    font-size: 32px;
+    margin: 0;
+    font-weight: normal;
+  }
+
+  .photo-block {
+    .caption {
+      text-align: right;
+      font-style: italic;
+      font-size: 14px;
+    }
+  }
+
+  .show-more {
+    display: block;
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 4px 0;
+    display: none;
+  }
+
+  .column.collapsed .more {
+    // .a11y-hidden();
   }
 
   .offerings {
+    .display-flex();
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+
+    li {
+      .flex(1 1 0%);
+      padding: 10px;
+    }
+
+    svg {
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
+  }
+
+  .more-container {
+    .flex(1 1 0%);
+  }
+
+  .description {
+    display: block;
     list-style-type: none;
     padding: 0;
     margin: 0;
 
+    b {
+      font-size: 120%;
+      display: block;
+      color: darken(red, 10%);
+      text-align: center;
+      font-family: @headline;
+      font-weight: normal;
+    }
+
     li {
-      .display-flex();
-      .align-items(center);
+      margin-bottom: 16px;
     }
-
-    span {
-      padding-left: 8px;
-    }
-  }
-
-  .icon {
-    display: block;
-    @size: 100px;
-    width: @size;
-    height: @size;
-    .flex(0 0 @size);
   }
 
   .vote {
-    background: @red;
-    border-radius: 20px;
-    padding: 4px 20px;
+    background: darken(red, 10%);
     color: white;
-    display: block;
-    margin: auto;
+    font-size: 16px;
+    padding: 6px 32px;
+    border-radius: 20px;
     border: none;
-    font-size: 28px;
     text-transform: uppercase;
-    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all .2s linear;
+    font-family: @headline;
 
     &:hover, &:focus {
-      background: lighten(@red, 10%);
-    }
-
-    &:disabled {
-      background: @df-middle-gray;
-    }
-
-    &.success {
-      background: green;
+      background: darken(red, 20%);
     }
   }
+  
 }

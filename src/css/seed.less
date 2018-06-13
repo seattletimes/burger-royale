@@ -1,5 +1,7 @@
 @import "seattletimes";
 
+@headline: "Titan One", @df-serif;
+
 @import "header";
 @import "nav";
 @import "list";
@@ -19,27 +21,18 @@
   width: 1px;
 }
 
-.placeholder {
-  position: relative;
-  border: 1px solid @df-light-gray;
 
-  &::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    content: "PLACEHOLDER";
-    font-family: @df-sans;
+@media (min-width: 1080px) {
+  .actually {
+    .display-flex();
+    .align-items(flex-start);
   }
 
-  &::before {
-    display: block;
-    content: "";
-    padding-bottom: 100%;
+  .round-matchups {
+    .flex(1 1 200px);
   }
 
-  &.wide::before {
-    padding-bottom: percentage(9 / 16);
+  .selected-matchup {
+    order: 9;
   }
 }

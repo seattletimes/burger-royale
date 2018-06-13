@@ -2,10 +2,11 @@
 // var track = require("./lib/tracking");
 
 var $ = require("./lib/qsa");
-var jsonp = require("./lib/jsonp");
+var closest = require("./lib/closest");
 var dot = require("./lib/dot");
-var scroll = require("./lib/animateScroll");
+var jsonp = require("./lib/jsonp");
 var memory = require("./memory");
+var scroll = require("./lib/animateScroll");
 
 var versusTemplate = dot.compile(require("./_versus.html"));
 var listTemplate = dot.compile(require("./_list.html"));
@@ -44,7 +45,7 @@ var updateRound = function() {
 
 var updateSelection = function(e) {
   var selected = listContainer.querySelector("input:checked");
-  if (!selected) return;
+  if (!selected) return versusContainer.innerHTML = "";
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
   if (e) scroll(versusContainer);
@@ -52,19 +53,26 @@ var updateSelection = function(e) {
 
 
 var submitVote = function(e) {
-  if (!(e.target.classList.contains("vote"))) return;
-  var buttons = $(".vote", versusContainer)
-  buttons.forEach(b => b.disabled = true);
-  var name = e.target.value;
-  var index = e.target.getAttribute("data-index");
-  jsonp(server, { vote: name }, function(data) {
-    if (data.error) {
-      buttons.forEach(b => b.disabled = false);
-      return console.log(data.error);
-    }
-    e.target.classList.add("success");
-    memory.setVote(bracketData.current, index);
-  });
+  switch (e.target.className) {
+    case "vote":
+      var buttons = $(".vote", versusContainer)
+      buttons.forEach(b => b.disabled = true);
+      var name = e.target.value;
+      var index = e.target.getAttribute("data-index");
+      jsonp(server, { vote: name }, function(data) {
+        if (data.error) {
+          buttons.forEach(b => b.disabled = false);
+          return console.log(data.error);
+        }
+        e.target.classList.add("success");
+        memory.setVote(bracketData.current, index);
+      });
+      break;
+
+    case "show-more":
+      closest(e.target, ".column").classList.remove("collapsed");
+      break;
+  }
 };
 
 listContainer.addEventListener("change", updateSelection);
