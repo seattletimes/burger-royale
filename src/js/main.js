@@ -35,6 +35,7 @@ state.selectedMatchup = state.selectedRound.matchups[0];
 var versusContainer = $.one(".selected-matchup");
 var listContainer = $.one(".round-matchups");
 var roundNav = $.one("nav.choose-round");
+var roundTitle = $.one(".round-title");
 
 var updateRound = function() {
   var selected = roundNav.querySelector("input:checked").value;
@@ -50,7 +51,6 @@ var updateSelection = function(e) {
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
   if (e) scroll(versusContainer);
 };
-
 
 var submitVote = function(e) {
   switch (e.target.className) {
@@ -70,7 +70,7 @@ var submitVote = function(e) {
       break;
 
     case "show-more":
-      closest(e.target, ".column").classList.remove("collapsed");
+      closest(e.target, ".column").classList.add("expanded");
       break;
   }
 };
