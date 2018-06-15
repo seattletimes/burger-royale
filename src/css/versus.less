@@ -157,6 +157,22 @@
     &:hover, &:focus {
       background: darken(red, 20%);
     }
+
+    &:disabled {
+      background: @df-light-gray;
+    }
+
+    &.success {
+      background: black;
+
+      &::after {
+        content: "d ✔ ";
+      }
+    }
+  }
+
+  .note {
+    color: @df-middle-gray;
   }
   
 }

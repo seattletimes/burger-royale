@@ -35,12 +35,14 @@ state.selectedMatchup = state.selectedRound.matchups[0];
 var versusContainer = $.one(".selected-matchup");
 var listContainer = $.one(".round-matchups");
 var roundNav = $.one("nav.choose-round");
-var roundTitle = $.one(".round-title");
+var fact = $.one(".burger-fact");
 
 var updateRound = function() {
   var selected = roundNav.querySelector("input:checked").value;
-  state.selectedRound = roundLookup[selected];
-  listContainer.innerHTML = listTemplate(state.selectedRound);
+  var round = state.selectedRound = roundLookup[selected];
+  console.log(round);
+  listContainer.innerHTML = listTemplate(round);
+  fact.innerHTML = `<b>Burger fact</b>: ${round.fact} (<a href="${round.link}">${round.source}</a>)`;
   updateSelection();
 };
 

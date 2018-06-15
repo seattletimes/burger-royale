@@ -88,8 +88,9 @@ module.exports = function(grunt) {
       }
       var past = !active || !future;
       var data = processRound(sheet, { active, past });
-      data.name = order.name;
-      data.dates = order.dates;
+      for (var k in order) {
+        data[k] = order[k];
+      }
       data.id = order.sheet;
       bracket.rounds.push(data);
       // if (data.current) break;
