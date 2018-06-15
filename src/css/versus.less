@@ -20,8 +20,21 @@
     .flex-direction(column);
     .justify-content(space-between);
 
+    @media @mobile {
+      display: block;
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-bottom: 1px solid @df-light-gray;
+      padding-bottom: 20px;
+    }
+
     &:first-child {
       border-right: 1px solid @df-light-gray;
+
+      @media @mobile {
+        border-right: none;
+      }
     }
   }
 
@@ -31,9 +44,18 @@
     font-size: 32px;
     margin: 0;
     font-weight: normal;
+
+    @media @mobile {
+
+    }
   }
 
   .photo-block {
+    @media @mobile {
+      float: right;
+      width: 50%;
+    }
+
     .caption {
       text-align: right;
       font-style: italic;
@@ -61,6 +83,7 @@
 
   .more-container {
     .flex(1 1 0%);
+    clear: both;
 
     @media @mobile {
       display: none;

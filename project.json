@@ -6,15 +6,15 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2018/burger-royale"
     }
   },
-  "title": "",
-  "description": "",
-  "url": "",
+  "title": "Burger Royale",
+  "description": "Where's the best burger restaurant in Seattle? Vote for your favorites in our summer burger bracket — we'll announce the winner on July 16",
+  "url": "https://projects.seattletimes.com/2018/burger-royale/",
   "image": "assets/social.jpg",
   "sheets": ["1po_yO-g_sHQE27K75ddRSbgsRsDJ3qK-XG_h8r3DnCE"],
   "standout": false,
-  "embedded": true,
+  "embedded": false,
   "production": false
 }
