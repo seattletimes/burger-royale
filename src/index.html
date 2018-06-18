@@ -15,6 +15,9 @@
     </header>
 
     <main class="bracket">
+      <div class="byline">
+        By Emily Eng, Shirley Qiu and Thomas Wilburn
+      </div>
       <div class="intro">
         <p>
           Hello, summer! The season is ripe for sunglasses, a cold drink and ... burgers. Picnic burgers. Backyard BBQ burgers. Balcony grill-out burgers. To celebrate the joys of this summer classic, we thought it'd be fun to feature the burger spots around town, and let readers decide on their favorite, in a multi-round burger bracket competition.
@@ -54,6 +57,8 @@
         <div class="round-matchups constrained"></div>
       </div>
       <div class="burger-fact"></div>
+
+      <%= t.include("partials/_dontMiss.html", { data: json.recirc }) %>
     </main>
 
     <%= t.include("partials/_navBottom.html") %>

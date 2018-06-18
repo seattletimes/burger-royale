@@ -1,14 +1,22 @@
 [
   {
-    "link": "https://www.seattletimes.com/life/food-drink/the-fourth-best-burger-in-america-its-in-south-park/"
+    "head": "The fourth best burger in America: It's in South Park",
+    "link": "https://www.seattletimes.com/life/food-drink/the-fourth-best-burger-in-america-its-in-south-park/",
+    "image": "teasers/fourth-best.jpg"
   },
   {
-    "link": "https://www.seattletimes.com/life/food-drink/5-fancy-burgers-for-living-large-on-the-cheap/"
+    "head": "5 fancy burgers for living large on the cheap",
+    "link": "https://www.seattletimes.com/life/food-drink/5-fancy-burgers-for-living-large-on-the-cheap/",
+    "image": "teasers/fancy.jpg"
   },
   {
-    "link": "https://www.seattletimes.com/pacific-nw-magazine/its-the-perfect-burger-according-to-this-seattle-chef/"
+    "head": "It's the perfect burger, according to this Seattle chef",
+    "link": "https://www.seattletimes.com/pacific-nw-magazine/its-the-perfect-burger-according-to-this-seattle-chef/",
+    "image": "teasers/perfect.jpg"
   },
   {
-    "link": "https://www.seattletimes.com/seattle-news/data/beer-burgers-and-haircuts-seattle-hits-new-high-for-cost-of-living-and-its-not-just-housing/"
+    "head": "Beer, burgers and haircuts: Seattle hits new high for cost of living",
+    "link": "https://www.seattletimes.com/seattle-news/data/beer-burgers-and-haircuts-seattle-hits-new-high-for-cost-of-living-and-its-not-just-housing/",
+    "image": "teasers/cost.jpg"
   }
 ]
