@@ -10,6 +10,7 @@
       name="matchup-radio"
       id="matchup-<%= data.id %>-<%= i %>"
       value="<%= i %>"
+      <%= item.voted ? 'disabled="disabled"' : "" %>
       <%= i ? "" : 'checked="checked"' %>>
     <label for="matchup-<%= data.id %>-<%= i %>">
       <% item.options.forEach(function(option) { %>

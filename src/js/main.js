@@ -22,6 +22,7 @@ bracketData.rounds.forEach(r => {
   r.active = r.id == bracketData.current;
   r.matchups.forEach((m, i) => {
     m.active = history[i] ? false : r.active;
+    m.voted = history[i];
     m.options.forEach(o => o.data = candidateLookup[o.name]);
   });
 });
@@ -60,13 +61,16 @@ var submitVote = function(e) {
       buttons.forEach(b => b.disabled = true);
       var name = e.target.value;
       var index = e.target.getAttribute("data-index");
+      var matchup = state.selectedRound[index];
       jsonp(server, { vote: name }, function(data) {
         if (data.error) {
           buttons.forEach(b => b.disabled = false);
           return console.log(data.error);
         }
+        state.selectedMatchup.voted = true;
         e.target.classList.add("success");
         memory.setVote(bracketData.current, index);
+        listContainer.innerHTML = listTemplate(state.selectedRound);
       });
       break;
 

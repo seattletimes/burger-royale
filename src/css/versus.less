@@ -26,7 +26,7 @@
       overflow: hidden;
       margin-bottom: 20px;
       border-bottom: 1px solid @df-light-gray;
-      padding-bottom: 20px;
+      padding: 0 0 20px;
     }
 
     &:first-child {
@@ -46,7 +46,7 @@
     font-weight: normal;
 
     @media @mobile {
-
+      font-size: 18px;
     }
   }
 
@@ -54,6 +54,8 @@
     @media @mobile {
       float: right;
       width: 50%;
+      margin-bottom: 20px;
+      margin-left: 10px;
     }
 
     .caption {
@@ -102,6 +104,7 @@
 
   .offerings {
     .display-flex();
+    .justify-content(center);
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -109,7 +112,7 @@
     text-align: center;
 
     li {
-      .flex(1 1 0%);
+      .flex(0 1 33%);
       padding: 10px;
     }
 
@@ -153,6 +156,7 @@
     cursor: pointer;
     transition: all .2s linear;
     font-family: @headline;
+    clear: both;
 
     &:hover, &:focus {
       background: darken(red, 20%);

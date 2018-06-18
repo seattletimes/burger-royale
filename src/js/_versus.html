@@ -14,21 +14,27 @@
   
   <div class="more-container"><div class="more">
     <ul class="offerings">
+      <% if (option.data.veggie) { %>
       <li> 
         <svg class="icon veggie" viewBox="26 26 202 210">
           <use xlink:href="#veggie"></use>
         </svg>
         <span><%= option.data.veggie || "none" %></span>
+      <% } %>
+      <% if (option.data.fries) { %>
       <li> 
-        <svg class="icon fries" viewBox="249 26 202 210">
+        <svg class="icon fries" viewBox="26 26 202 210">
           <use xlink:href="#fries"></use>
         </svg>
         <span><%= option.data.fries || "none" %></span>
+      <% } %>
+      <% if (option.data.shakes) { %>
       <li> 
-        <svg class="icon shake" viewBox="482 26 202 210">
+        <svg class="icon shake" viewBox="26 26 202 210">
           <use xlink:href="#shake"></use>
         </svg>
         <span><%= option.data.shakes || "none" %></span>
+      <% } %>
     </ul>
     
     <ul class="description">
