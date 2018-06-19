@@ -8,7 +8,9 @@
     </div>
   </div>
 
-  <h2><%= option.name %></h2>
+  <h2>
+    <%= option.name %>
+  </h2>
 
   <button class="show-more" aria-hidden="true">More information &raquo;</button>
   
@@ -40,6 +42,10 @@
     <ul class="description">
       <li> <b>What's popular</b> <%= option.data.popular %>
       <li> <b>What's special</b> <%= option.data.unique %>
+      <li> <div class="contact"><a href="tel:<%= option.data.phone %>"><%= option.data.phone %></a>
+        <% if (option.data.url) { %>
+        | <a href="<%= option.data.url %>" target="_blank">web site</a>
+        <% } %></div>
     </ul>
   </div></div>
 

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     var bracketClosed = grunt.option("closed");
 
     var processRound = function(sheet, { past, active }) {
-      var round = { matchups: [] };
+      var round = { matchups: [], past, active };
       //future rounds
       if (!sheet) return round;
 
@@ -42,11 +42,10 @@ module.exports = function(grunt) {
           option.details = candidates[option.id];
         });
         if (past || bracketClosed) {
-          matchup.winner = a.votes > b.votes ? a.id : b.id
+          matchup.winner = a.votes > b.votes ? a.name : b.name
         }
         round.matchups.push(matchup);
       }
-      round.active = !past;
       return round;
     };
 
@@ -83,10 +82,10 @@ module.exports = function(grunt) {
       var order = orderSheet[i];
       var sheet = getSheet(order.sheet);
       var active = order.sheet == roundID;
+      var past = !active && !future;
       if (active) {
         future = true;
       }
-      var past = !active || !future;
       var data = processRound(sheet, { active, past });
       for (var k in order) {
         data[k] = order[k];

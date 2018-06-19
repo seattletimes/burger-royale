@@ -1,98 +1,130 @@
 [
   {
-    "name": "Just Burgers"
+    "name": "Just Burgers",
+    "votes": 147
   },
   {
-    "name": "8oz Burger & Co."
+    "name": "8oz Burger & Co.",
+    "votes": 443
   },
   {
-    "name": "Wibbley's"
+    "name": "Wibbley's",
+    "votes": 152
   },
   {
-    "name": "Scooter's Burgers"
+    "name": "Scooter's Burgers",
+    "votes": 163
   },
   {
-    "name": "Li'l Woody's"
+    "name": "Li'l Woody's",
+    "votes": 374
   },
   {
-    "name": "Burgermaster"
+    "name": "Burgermaster",
+    "votes": 284
   },
   {
-    "name": "Burger Town"
+    "name": "Burger Town",
+    "votes": 125
   },
   {
-    "name": "Wallyburger"
+    "name": "Wallyburger",
+    "votes": 171
   },
   {
-    "name": "BRGR Bar Seattle"
+    "name": "BRGR Bar Seattle",
+    "votes": 107
   },
   {
-    "name": "Dick's"
+    "name": "Dick's",
+    "votes": 641
   },
   {
-    "name": "Giddy Up Burgers & Greens"
+    "name": "Giddy Up Burgers & Greens",
+    "votes": 121
   },
   {
-    "name": "Katsu Burger"
+    "name": "Katsu Burger",
+    "votes": 295
   },
   {
-    "name": "Loretta's Northwesterner"
+    "name": "Loretta's Northwesterner",
+    "votes": 196
   },
   {
-    "name": "Tipsy Cow Burger Bar"
+    "name": "Tipsy Cow Burger Bar",
+    "votes": 214
   },
   {
-    "name": "Kidd Valley"
+    "name": "Kidd Valley",
+    "votes": 402
   },
   {
-    "name": "The Little Chicken Burger"
+    "name": "The Little Chicken Burger",
+    "votes": 63
   },
   {
-    "name": "Lunchbox Laboratory"
+    "name": "Lunchbox Laboratory",
+    "votes": 311
   },
   {
-    "name": "Feed Co. Burgers"
+    "name": "Feed Co. Burgers",
+    "votes": 171
   },
   {
-    "name": "Burger Madness"
+    "name": "Burger Madness",
+    "votes": 150
   },
   {
-    "name": "Cloud 9 Burgers"
+    "name": "Cloud 9 Burgers",
+    "votes": 104
   },
   {
-    "name": "Red Mill Burgers"
+    "name": "Red Mill Burgers",
+    "votes": 533
   },
   {
-    "name": "206 Burger Company"
+    "name": "206 Burger Company",
+    "votes": 67
   },
   {
-    "name": "DeLuxe Bar & Grill"
+    "name": "DeLuxe Bar & Grill",
+    "votes": 138
   },
   {
-    "name": "Great State Burger"
+    "name": "Great State Burger",
+    "votes": 245
   },
   {
-    "name": "Coastline"
+    "name": "Coastline",
+    "votes": 130
   },
   {
-    "name": "Blue Moon Burgers"
+    "name": "Blue Moon Burgers",
+    "votes": 250
   },
   {
-    "name": "Zippy's Giant Burgers"
+    "name": "Zippy's Giant Burgers",
+    "votes": 236
   },
   {
-    "name": "Burger Brawler"
+    "name": "Burger Brawler",
+    "votes": 99
   },
   {
-    "name": "Burger and Kabob Hut"
+    "name": "Burger and Kabob Hut",
+    "votes": 43
   },
   {
-    "name": "Uneeda Burger"
+    "name": "Uneeda Burger",
+    "votes": 369
   },
   {
-    "name": "PICK-QUICK Drive In"
+    "name": "PICK-QUICK Drive In",
+    "votes": 190
   },
   {
-    "name": "Bent Burgers"
+    "name": "Bent Burgers",
+    "votes": 106
   }
 ]

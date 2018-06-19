@@ -1,5 +1,5 @@
-<h2>More matchups in <%= data.name %>:</h2>
-<ul class="matchups">
+<h2>Matchups in <%= data.name %>:</h2>
+<ul class="matchups <%= data.past ? "past" : "not-past" %>">
   <% if (!data.matchups.length) { %>
   This round isn't open yet--check back later!
   <% } else data.matchups.forEach(function(item, i) { %>
@@ -10,11 +10,11 @@
       name="matchup-radio"
       id="matchup-<%= data.id %>-<%= i %>"
       value="<%= i %>"
-      <%= item.voted ? 'disabled="disabled"' : "" %>
+      <%= item.voted || data.past ? 'disabled="disabled"' : "" %>
       <%= i ? "" : 'checked="checked"' %>>
     <label for="matchup-<%= data.id %>-<%= i %>">
       <% item.options.forEach(function(option) { %>
-      <div class="candidate"><%= option.name %></div>
+      <div class="candidate <%= option.name == item.winner ? "winner" : "" %>"><%= option.name %></div>
       <% }); %>
     </label>
   <% }); %>

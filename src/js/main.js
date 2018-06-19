@@ -49,6 +49,8 @@ var updateRound = function() {
 var updateSelection = function(e) {
   var selected = listContainer.querySelector("input:checked");
   if (!selected) return versusContainer.innerHTML = "";
+  var past = listContainer.querySelector("ul.matchups.past");
+  if (past) return versusContainer.innerHTML = "This round is closed for voting.";
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
   if (e) scroll(versusContainer);

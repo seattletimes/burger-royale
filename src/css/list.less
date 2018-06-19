@@ -54,5 +54,21 @@
     background: @df-off-white;
     cursor: default;
   }
+
+  .past {
+    input:disabled + label {
+      background: black;
+      color: black;
+
+      .winner {
+        color: darken(red, 10%);
+        font-weight: bold;
+
+        &::after {
+          content: " ✔";
+        }
+      }
+    }
+  }
   
 }

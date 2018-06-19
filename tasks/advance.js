@@ -34,7 +34,7 @@ module.exports = function(grunt) {
       var b = sheet[i + 1];
 
       next.push({ 
-        id: a.votes * 1 > b.votes * 1 ? a.id : b.id,
+        name: a.votes * 1 > b.votes * 1 ? a.name : b.name,
         votes: 0
       });
     }
