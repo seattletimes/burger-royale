@@ -3,7 +3,7 @@
     "order": 1,
     "name": "Round 1",
     "sheet": "round1",
-    "dates": "Opens 6/19",
+    "dates": "Closed",
     "fact": "Americans consume about 50 billion burgers a year, averaging three burgers per week.",
     "source": "PBS",
     "link": "https://www.pbs.org/newshour/science/the-hidden-costs-of-hamburgers"
@@ -12,7 +12,7 @@
     "order": 2,
     "name": "Round 2",
     "sheet": "round2",
-    "dates": "6/25",
+    "dates": "Opens 6/25",
     "fact": "Americans consume more than 21 pounds of ketchup per person each year.",
     "source": "Statista",
     "link": "https://www.statista.com/outlook/40070100/109/tomato-ketchup/united-states#"
