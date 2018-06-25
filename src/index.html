@@ -33,7 +33,9 @@
           <% grunt.data.bracket.rounds.forEach(function(round, i) { %>
           <li>
             <input
-              <%= i ? "" : 'checked="checked"' %>
+              <% if (round.active) { %>
+              checked="checked"
+              <% } %>
               type="radio"
               class="a11y-hidden"
               name="round-selection"
