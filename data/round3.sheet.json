@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "name": "8oz Burger & Co.",
+    "votes": 24
+  },
+  {
+    "name": "Li'l Woody's",
+    "votes": 44
+  },
+  {
+    "name": "Dick's",
+    "votes": 52
+  },
+  {
+    "name": "Kidd Valley",
+    "votes": 43
+  },
+  {
+    "name": "Lunchbox Laboratory",
+    "votes": 20
+  },
+  {
+    "name": "Red Mill Burgers",
+    "votes": 61
+  },
+  {
+    "name": "Zippy's Giant Burgers",
+    "votes": 20
+  },
+  {
+    "name": "Uneeda Burger",
+    "votes": 42
+  }
+]
