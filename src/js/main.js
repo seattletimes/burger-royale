@@ -45,6 +45,7 @@ var updateRound = function() {
   listContainer.innerHTML = listTemplate(round);
   fact.innerHTML = `<b>Burger fact</b>: ${round.fact} (<a href="${round.link}">${round.source}</a>)`;
   updateSelection();
+  listContainer.focus();
 };
 
 var updateSelection = function(e) {
@@ -53,7 +54,10 @@ var updateSelection = function(e) {
   var past = listContainer.querySelector("ul.matchups.past");
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
-  if (e) scroll(versusContainer);
+  if (e) {
+    scroll(versusContainer);
+    versusContainer.focus();
+  }
 };
 
 var submitVote = function(e) {
