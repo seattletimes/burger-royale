@@ -51,8 +51,10 @@
 
   <% if (data.active) { %>
   <button class="vote" value="<%= option.name %>" data-index="<%= data.index %>">Vote</button>
-  <% } else { %>
-  <div class="note">You've already voted in this matchup.</div>
+  <% } %>
+
+  <% if (data.winner == option.name) { %>
+    <div class="winner">&star; Winner &star;</div>
   <% } %>
 
 </div>

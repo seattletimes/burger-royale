@@ -6,11 +6,11 @@
   <li>
     <input
       type="radio"
-      class="a11y-hidden"
+      class="a11y-hidden <%= item.voted || data.past ? "disabled" : "" %>"
       name="matchup-radio"
       id="matchup-<%= data.id %>-<%= i %>"
       value="<%= i %>"
-      <%= item.voted || data.past ? 'disabled="disabled"' : "" %>
+      
       <%= i ? "" : 'checked="checked"' %>>
     <label for="matchup-<%= data.id %>-<%= i %>">
       <% item.options.forEach(function(option) { %>

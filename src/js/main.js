@@ -13,13 +13,19 @@ var listTemplate = dot.compile(require("./_list.html"));
 
 var server = "https://script.google.com/macros/s/AKfycbzfbV5LQ9eH1dCzjLnYpNnEHcdfNgRvW7A01fsrRwmhGI52Oulo/exec";
 
+var versusContainer = $.one(".selected-matchup");
+var listContainer = $.one(".round-matchups");
+var roundNav = $.one("nav.choose-round");
+var fact = $.one(".burger-fact");
+
 var roundLookup = {};
 var candidateLookup = {};
 candidateData.forEach(c => candidateLookup[c.name] = c);
+var amnesia = versusContainer.classList.contains("amnesia");
 bracketData.rounds.forEach(r => {
   roundLookup[r.id] = r;
-  var history = memory.getVotes(r.id);
   r.active = r.id == bracketData.current;
+  var history = amnesia ? [] : memory.getVotes(r.id);
   r.matchups.forEach((m, i) => {
     m.active = history[i] ? false : r.active;
     m.voted = history[i];
@@ -33,11 +39,6 @@ var state = {
 
 state.selectedMatchup = state.selectedRound.matchups[0];
 
-var versusContainer = $.one(".selected-matchup");
-var listContainer = $.one(".round-matchups");
-var roundNav = $.one("nav.choose-round");
-var fact = $.one(".burger-fact");
-
 var updateRound = function() {
   var selected = roundNav.querySelector("input:checked").value;
   var round = state.selectedRound = roundLookup[selected];
@@ -50,7 +51,6 @@ var updateSelection = function(e) {
   var selected = listContainer.querySelector("input:checked");
   if (!selected) return versusContainer.innerHTML = "";
   var past = listContainer.querySelector("ul.matchups.past");
-  if (past) return versusContainer.innerHTML = "This round is closed for voting.";
   state.selectedMatchup = state.selectedRound.matchups[selected.value];
   versusContainer.innerHTML = versusTemplate(state.selectedMatchup);
   if (e) scroll(versusContainer);
