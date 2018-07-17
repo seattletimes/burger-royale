@@ -1,10 +1,11 @@
 [
   {
     "name": "Dick's",
-    "votes": 5565
+    "votes": 0,
+    "winner": "x"
   },
   {
     "name": "Red Mill Burgers",
-    "votes": 4576
+    "votes": 0
   }
 ]

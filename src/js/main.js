@@ -43,7 +43,7 @@ var updateRound = function() {
   var selected = roundNav.querySelector("input:checked").value;
   var round = state.selectedRound = roundLookup[selected];
   listContainer.innerHTML = listTemplate(round);
-  fact.innerHTML = `<b>Burger fact</b>: ${round.fact} (<a href="${round.link}">${round.source}</a>)`;
+  fact.innerHTML = round.fact ? `<b>Burger fact</b>: ${round.fact} (<a href="${round.link}">${round.source}</a>)` : "";
   updateSelection();
   listContainer.focus();
 };
